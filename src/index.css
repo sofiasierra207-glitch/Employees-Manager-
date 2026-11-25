@@ -1,0 +1,199 @@
+/* ===== Paleta de colores ===== */
+:root {
+  --fondo: #f7f2fd;
+  --blanco: #ffffff;
+  --texto: #3d2a52;
+  --texto-suave: #7a6690;
+  --morado: #8a5cc7;
+  --morado-oscuro: #5b3a8c;
+  --morado-claro: #efe5fb;
+  --borde: #ece2f8;
+  --rojo: #c0392b;
+  --sombra: rgba(138, 92, 199, 0.12);
+}
+
+/* ===== Generales ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+/* ===== Barra de navegación ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px 25px;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 8px var(--sombra);
+}
+
+.navbar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--morado);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: var(--texto-suave);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* NavLink le pone la clase "active" al enlace de la página actual */
+.navbar-links a.active {
+  color: var(--morado);
+}
+
+/* ===== Página ===== */
+.pagina {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.pagina-titulo {
+  color: var(--morado-oscuro);
+  font-size: 32px;
+}
+
+.tarjeta {
+  background-color: var(--blanco);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+.tarjeta h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+/* ===== Formulario ===== */
+/* Los campos se acomodan solos: 1 columna en celular, varias en escritorio */
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--texto);
+  background-color: var(--blanco);
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 2px solid var(--morado);
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+}
+
+.boton {
+  background-color: var(--morado);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--morado-oscuro);
+}
+
+.boton:disabled {
+  background-color: var(--morado-claro);
+  color: var(--texto-suave);
+  cursor: not-allowed;
+}
+
+
+/* ===== Tabla ===== */
+/* En celular la tabla se puede deslizar de lado sin romper la página */
+.tabla-contenedor {
+  padding: 0;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  background-color: var(--morado-claro);
+  padding: 14px 20px;
+}
+
+td {
+  padding: 14px 20px;
+  border-top: 1px solid var(--borde);
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+.salario {
+  color: var(--morado);
+}
+
+.acciones {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.enlace-editar,
+.enlace-eliminar {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.enlace-editar {
+  color: var(--morado);
+}
+
+.enlace-eliminar {
+  color: var(--rojo);
+}
+
+
+/* ===== Celular ===== */
+@media (max-width: 600px) {
+  .pagina-titulo {
+    font-size: 24px;
+  }
+}
